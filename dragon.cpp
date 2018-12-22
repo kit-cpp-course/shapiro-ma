@@ -1,12 +1,6 @@
 #include "dragon.h"
 
-dragon::dragon() : bird(-100.f, 172.f) {
-	texture.loadFromFile("src/img/dspr.png");
-	bound.left = position.x;
-	bound.top = position.y + 128 - 50;
-	bound.width = 256;
-	bound.height = 100;
-}
+dragon::dragon() : flyingObject(-100.f, 172.f, "src/img/dspr.png", { -100.f, 172.f + 128 - 50,256,100 }) {}
 
 void dragon::move(float speed) {
 	if (position.y >= 600 - 128) position.y = -127.f;

@@ -1,6 +1,6 @@
 #include "infiniteLevel.h"
 
-infiniteLevel::infiniteLevel() :gameController(1024, 600, "src/img/part1.png", "src/font/12030.ttf") {
+infiniteLevel::infiniteLevel() : gameController(1024, 600, "src/img/part1.png", "src/font/12030.ttf") {
 	sp[0].setTexture(background);
 	sp[1].setTexture(background);
 };
@@ -32,8 +32,4 @@ void infiniteLevel::printText(RenderWindow & window) {
 	window.draw(setText("Game over", 100, { 250,230 }));
 	window.draw(setText("Press any key to restart...", 40, { 250,340 }));
 	window.draw(setText("Press escape to exit...", 40, { 250,385 }));
-}
-
-infiniteLevel & infiniteLevel::instance() {
-	return il;
 }

@@ -1,16 +1,16 @@
-#pragma once
-#include "bird.h"
+п»ї#pragma once
+#include "flyingObject.h"
 
-class dragon : public bird{
+class dragon : public flyingObject{
 public:
 
 	/*
-	* Основной конструктор класса
+	* РћСЃРЅРѕРІРЅРѕР№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°
 	*/
 	dragon();
 
 	/*
-	* Перемещает птицу по оси х со скоростью speed
+	* РџРµСЂРµРјРµС‰Р°РµС‚ РїС‚РёС†Сѓ РїРѕ РѕСЃРё С… СЃРѕ СЃРєРѕСЂРѕСЃС‚СЊСЋ speed
 	*/
 	void move(float speed);
 }; 

@@ -1,6 +1,10 @@
-#pragma once
+﻿#pragma once
 #include "stdafx.h"
 #include "bird.h"
+#include "fire.h"
+#include "dragon.h"
+
+enum { windowClosed=1, keyPressed };
 
 class gameController {
 protected:
@@ -34,7 +38,13 @@ protected:
 	* Настройка надписей
 	*/
 	Text setText(std::string content, short size, Vector2<short> position = { 0,0 }, Color color = Color::Black);
+
 public:
+
+	/*
+	* Счётчик очков
+	*/
+	int count = 0;
 
 	/*
 	* Основной конструктор класса, принимающий ширину, высоту окна, путь к изображению фона и шрифту
@@ -60,6 +70,13 @@ public:
 	* Отрисовывает текст
 	*/
 	virtual void printText(RenderWindow & window) = 0;
+
+	/*
+	* Обработка нажатия клавиш
+	*/
+	bool keys(RenderWindow & window, dragon &  player, std::vector<fire> & fireball);
+
+	short keys(RenderWindow & window);
 
 	/*
 	* Возвращает ширину окна
