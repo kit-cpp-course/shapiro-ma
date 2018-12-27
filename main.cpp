@@ -3,13 +3,13 @@
 #include "bird.h"
 #include "dragon.h"
 #include "fire.h"
-#include "createInfiniteLevel.h"
+#include "gameController.h"
 
+gameController * gameController::gc = NULL;
 int main()
 {
 	Context context;
-	createInfiniteLevel c;
-	gameController * gc = c.create();
+	gameController * gc = gameController::createController();
 
 	RenderWindow window(VideoMode(gc->getWidth(), gc->getHeight()), "Fire them all!");
 

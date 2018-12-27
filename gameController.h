@@ -39,17 +39,24 @@ protected:
 	*/
 	Text setText(std::string content, short size, Vector2<short> position = { 0,0 }, Color color = Color::Black);
 
+	/*
+	* Указатель на экземпляр конкретной реализации
+	*/
+	static gameController * gc;
+
+protected:
+
+	/*
+	* Основной конструктор класса, принимающий ширину, высоту окна, путь к изображению фона и шрифту
+	*/
+	gameController(short width, short height, std::string backgroundPath, std::string fontPath);
+
 public:
 
 	/*
 	* Счётчик очков
 	*/
 	int count = 0;
-
-	/*
-	* Основной конструктор класса, принимающий ширину, высоту окна, путь к изображению фона и шрифту
-	*/
-	gameController(short width, short height, std::string backgroundPath, std::string fontPath);
 
 	/*
 	* Отрисовка фона
@@ -87,4 +94,9 @@ public:
 	* Возвращает высоту окна
 	*/
 	short getHeight() const;
+
+	/*
+	* Фабричный метод, возвращающий указатель на конкретную реализацию класса
+	*/
+	static gameController * createController();
 };

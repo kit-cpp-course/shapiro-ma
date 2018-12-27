@@ -1,7 +1,8 @@
 ﻿#pragma once
 #include "gameController.h"
 
-class infiniteLevel : public gameController {
+class infiniteLevel : public gameController{
+	friend class gameController;
 
 	/*
 	* Переменная, необходимая для отрисовки движения фона
@@ -13,12 +14,12 @@ class infiniteLevel : public gameController {
 	*/
 	Sprite sp[2];
 
-public:
-
 	/*
 	* Основной конструктор класса
 	*/
 	infiniteLevel();
+	
+public:
 
 	/*
 	* Отрисовка движущегося фона
@@ -40,3 +41,11 @@ public:
 	*/
 	void printText(RenderWindow & window);
 };
+
+gameController * gameController::createController() {
+	if (!gc) {
+		gc = new infiniteLevel();
+		return gc;
+	}
+	else return gc;
+}

@@ -68,3 +68,4 @@ short gameController::getWidth() const {
 short gameController::getHeight() const {
 	return height;
 }
+
